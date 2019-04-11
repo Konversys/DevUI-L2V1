@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Bar, Line, Pie} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 
-class Chart extends Component{
+class LineChart extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -13,16 +13,16 @@ class Chart extends Component{
         displayTitle: true,
         displayLegend: true,
         legendPositions: 'right',
-        textTitle: 'Актив МСОП "Альтаир"'
+        textTitle: 'Уровень безработицы на регистрируемом рынке труда в разрезе городов и районов РБ в 2015 году'
     }
 
     render(){
         return (
             <div className="chart">
-                <Bar
+                <Line
                     data={this.state.chartData}
                     width={100}
-                    height={10}
+                    height={20}
                     options={{
                         title:{
                             display: this.props.displayTitle,
@@ -40,4 +40,4 @@ class Chart extends Component{
     }
 }
 
-export default Chart;
+export default LineChart;
